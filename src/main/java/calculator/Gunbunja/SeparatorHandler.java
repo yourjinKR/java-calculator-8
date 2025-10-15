@@ -1,6 +1,9 @@
 package calculator.Gunbunja;
 
 
+import java.util.Arrays;
+import java.util.List;
+
 public class SeparatorHandler {
     private String customSeparator = "";
     private String calcArea;
@@ -20,5 +23,12 @@ public class SeparatorHandler {
 
     public boolean validateCalcArea() {
         return calcArea.matches("^[0-9,:" + customSeparator + "]*$");
+    }
+
+    public List<Long> splitNumberByGubunJa() {
+        String separator = ",:" + customSeparator;
+
+        String[] numberList = calcArea.split("[" + separator + "]");
+        return Arrays.stream(numberList).map(Long::parseLong).toList();
     }
 }
