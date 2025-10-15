@@ -27,10 +27,10 @@ public class SeparatorHandler {
     }
 
     public void splitByCustomSeparator(String solution) {
-        String customSeparator = solution.substring(0, 5);
+        char customSeparator = solution.charAt(2);
         String calcArea = solution.substring(5);
 
-        this.customSeparator = customSeparator;
+        this.customSeparator = String.valueOf(customSeparator);
         this.calcArea = calcArea;
     }
 
