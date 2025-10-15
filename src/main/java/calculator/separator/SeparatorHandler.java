@@ -9,6 +9,18 @@ public class SeparatorHandler {
     private String customSeparator = "";
     private String calcArea;
 
+    public SeparatorHandler() {}
+
+    public SeparatorHandler(String solution) {
+        boolean hasCustom = this.validateSeparator(solution);
+        if (hasCustom) {
+            splitByCustomSeparator(solution);
+            return;
+        }
+
+        this.calcArea = solution;
+    }
+
     public boolean validateSeparator(String solution) {
         String customSeparator = solution.substring(0,5);
         return customSeparator.matches("^//.\\\\n");
