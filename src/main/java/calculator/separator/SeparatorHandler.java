@@ -44,6 +44,14 @@ public class SeparatorHandler {
         String separator = basicSeparator + customSeparator;
 
         String[] numberList = calcArea.split("[" + separator + "]");
-        return Arrays.stream(numberList).map(Long::parseLong).toList();
+        return Arrays.stream(numberList).map(this::parseLong).toList();
+    }
+
+    public Long parseLong(String stringMember) {
+        try {
+            return Long.parseLong(stringMember);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
     }
 }
