@@ -14,7 +14,7 @@ public class SeparatorHandler {
         return customSeparator.matches("^//.\\\\n");
     }
 
-    public void splitBySeparator(String solution) {
+    public void splitByCustomSeparator(String solution) {
         String customSeparator = solution.substring(0, 5);
         String calcArea = solution.substring(5);
 
