@@ -1,4 +1,4 @@
-package calculator.Gunbunja;
+package calculator.separator;
 
 
 import java.util.Arrays;
@@ -9,12 +9,12 @@ public class SeparatorHandler {
     private String customSeparator = "";
     private String calcArea;
 
-    public boolean validateGubunJa(String solution) {
+    public boolean validateSeparator(String solution) {
         String customSeparator = solution.substring(0,5);
         return customSeparator.matches("^//.\\\\n");
     }
 
-    public void splitByGubunJa(String solution) {
+    public void splitBySeparator(String solution) {
         String customSeparator = solution.substring(0, 5);
         String calcArea = solution.substring(5);
 
@@ -26,7 +26,7 @@ public class SeparatorHandler {
         return calcArea.matches("^[0-9" + basicSeparator + customSeparator + "]*$");
     }
 
-    public List<Long> splitNumberByGubunJa() {
+    public List<Long> splitNumberBySeparator() {
         String separator = basicSeparator + customSeparator;
 
         String[] numberList = calcArea.split("[" + separator + "]");
