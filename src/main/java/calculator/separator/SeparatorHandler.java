@@ -12,7 +12,7 @@ public class SeparatorHandler {
     public SeparatorHandler() {}
 
     public SeparatorHandler(String solution) {
-        boolean hasCustom = this.validateSeparator(solution);
+        boolean hasCustom = this.validateCustomSeparator(solution);
         if (hasCustom) {
             splitByCustomSeparator(solution);
             return;
@@ -21,7 +21,9 @@ public class SeparatorHandler {
         this.calcArea = solution;
     }
 
-    public boolean validateSeparator(String solution) {
+    public boolean validateCustomSeparator(String solution) {
+        if (solution.length() < 5) return false;
+
         String customSeparator = solution.substring(0,5);
         return customSeparator.matches("^//.\\\\n");
     }
