@@ -14,7 +14,8 @@ public class SeparatorHandler {
     public SeparatorHandler(String solution) {
         boolean hasCustom = this.validateCustomSeparator(solution);
         if (hasCustom) {
-            splitByCustomSeparator(solution);
+            this.customSeparator = getCustomSeparator(solution);
+            this.calcArea = cutCustomSeperator(solution);
             return;
         }
 
@@ -34,6 +35,15 @@ public class SeparatorHandler {
 
         this.customSeparator = String.valueOf(customSeparator);
         this.calcArea = calcArea;
+    }
+
+    public String cutCustomSeperator(String solution) {
+        return solution.substring(5);
+    }
+
+    public String getCustomSeparator(String solution) {
+        char pureCustomSeparator = solution.charAt(2);
+        return String.valueOf(pureCustomSeparator);
     }
 
     public boolean validateCalcArea() {
