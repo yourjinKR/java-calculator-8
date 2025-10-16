@@ -51,6 +51,9 @@ public class SeparatorHandler {
     }
 
     public List<Long> splitNumberBySeparator() {
+        if (!validateCalcArea())
+            throw new IllegalArgumentException();
+
         String separator = basicSeparator + customSeparator;
 
         String[] numberList = calcArea.split("[" + separator + "]");
