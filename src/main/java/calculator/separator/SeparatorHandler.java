@@ -29,14 +29,6 @@ public class SeparatorHandler {
         return customSeparator.matches("^//.\\\\n");
     }
 
-    public void splitByCustomSeparator(String solution) {
-        char customSeparator = solution.charAt(2);
-        String calcArea = solution.substring(5);
-
-        this.customSeparator = String.valueOf(customSeparator);
-        this.calcArea = calcArea;
-    }
-
     public String cutCustomSeperator(String solution) {
         return solution.substring(5);
     }
