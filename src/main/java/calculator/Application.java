@@ -15,7 +15,7 @@ public class Application {
         SeparatorHandler separatorHandler = new SeparatorHandler(rawData);
 
         List<Long> numList = separatorHandler.splitNumberBySeparator();
-        Long result = Calculator.run(numList);
+        Long result = Calculator.sum(numList);
 
         Console.close();
         System.out.println(MessageHelper.RESULT_HEADER + result);
