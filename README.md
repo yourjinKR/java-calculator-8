@@ -1,39 +1,44 @@
 # java-calculator-precourse
-- 기능 구현 전 요구사항을 읽고 해당 과제에 대해 구현할 기능 목록을 정리했습니다.
-- 최종 결과물과 본 기능 목록서는 내용이 상이할 수 있습니다.
-- 각 메소드명은 임시로 작성했습니다.
 
-## 구현할 기능 목록
-> ⚠️ : `IllegalArgumentException`
-> 
-### `boolean checkCustomGubunJa(String solution)`
+## SeparatorHandler
+### `String basicSeparator`
+- 기본 구분자
+### `String customSeparator`
+- 커스텀 구분자
+### `String calcArea`
+- 계산 영역
 
-- `"//"`와 `"\n"`가 있는지 확인
+### `boolean validateCustomSeparator(String solution)`
+- 문자열에 올바른 형식의 커스텀 구분자 지정문이 있는지 검증
 
-### `boolean validateGubunJa(String solution)`
+### `String cutCustomSeperator(String solution)`
+- 커스텀 구분자 지정문에 해당되는 영역을 잘라낸 문자열을 반환 
 
-- 구분자 지정 문법이 올바른지 검사
-  - 해당 문자 사이에 문자가 존재하지 알을 경우 ⚠️
-  - 해당 문자 사이에 “문자”가 아닌 “문자열”이 있을 경우 ⚠️
-- 실행조건 : 커스텀 구분자가 있을때
+### `String getCustomSeparator(String solution)`
+- 문자열에서 커스텀 구분자를 얻어옴
 
-### `? splitByGubunJa(String solution)`
+### `boolean validateCalcArea()`
+- 계산 영역이 올바른 형식으로 작성됐는지 검증
 
-- 커스텀 구분자 문구와 계산 영역을 분리
-- 실행조건 : 커스텀 구분자 없거나 검증된 커스텀 구분자가 있을 경우
+### `List<Long> splitNumberBySeparator()`
+- *구분자들*을 기준으로 계산 영역 문자열을 배열로 변환
+- 배열로 변환된 값들을 숫자로 타입 변환하여 Long 타입의 List를 반환
+> 구분자들 : 기본 구분자 + 커스텀 구분자
 
-### `boolean validateNumString(char gubunja, String numberStr)`
+### `Long parseLong(String stringMember)`
+- String -> Long 타입 변환 과정에서 발생하는 예외를 `IllegalArgumentException`로 예외처리
 
-- 계산 영역에 구분자와 숫자 외 다른 문자가 있는지
-  - 있다면 ⚠️
-  - 없다면 true
-- 실행조건 : 구분자와 숫자 외 문자 있는지 검증
+<br>
 
-### `List<int> splitNumberByGubunJa(char gubunja, String numberStr)`
+## Calculator
+### `Long sum(List<Long> numList)`
+- long 타입의 배열의 합을 반환
 
-- 계산 영역을 구분자 기준으로 분리
-- 예시 : `"2:3:4"` → `[2, 3, 4]`
+<br>
 
-### `int calcNumStr(List<int> number)`
+## MessageHelper
+### `String INPUT_INTRO`
+- `public statinc final` 지정자로 상수값으로 관리
 
-- 문자열을 계산 후 결과 리턴
+### `String RESULT_HEADER`
+- `public statinc final` 지정자로 상수값으로 관리
