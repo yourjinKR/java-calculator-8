@@ -3,10 +3,8 @@
 ## SeparatorHandler
 > 구분자 관리 및 계산 가능한 데이터 형식으로 변환
 ### field
-#### `String basicSeparator`
-- 기본 구분자
-#### `String customSeparator`
-- 커스텀 구분자
+#### `String separator`
+- 구분자
 #### `String calcArea`
 - 계산 영역
 ### method
