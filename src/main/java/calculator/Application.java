@@ -4,7 +4,6 @@ import calculator.separator.SeparatorHandler;
 import calculator.calculator.Calculator;
 import calculator.message.MessageHelper;
 import camp.nextstep.edu.missionutils.Console;
-import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
@@ -14,7 +13,7 @@ public class Application {
 
         SeparatorHandler separatorHandler = new SeparatorHandler(rawData);
 
-        List<Long> numList = separatorHandler.splitNumberBySeparator();
+        WrappedNumList numList = new WrappedNumList(separatorHandler.splitNumberBySeparator());
         Long result = Calculator.sum(numList);
 
         Console.close();
