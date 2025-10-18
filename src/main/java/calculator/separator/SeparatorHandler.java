@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SeparatorHandler {
-    private final String basicSeparator = ",:";
-    private String customSeparator = "";
+    private String separator = ",:";
     private String calcArea;
 
     public SeparatorHandler() {}
@@ -14,7 +13,7 @@ public class SeparatorHandler {
     public SeparatorHandler(String solution) {
         boolean hasCustom = this.validateCustomSeparator(solution);
         if (hasCustom) {
-            this.customSeparator = getCustomSeparator(solution);
+            this.separator += getCustomSeparator(solution);
             this.calcArea = cutCustomSeperator(solution);
             return;
         }
@@ -39,14 +38,12 @@ public class SeparatorHandler {
     }
 
     public boolean validateCalcArea() {
-        return calcArea.matches("^[0-9" + basicSeparator + customSeparator + "]*$");
+        return calcArea.matches("^[0-9" +  separator + "]*$");
     }
 
     public List<Long> splitNumberBySeparator() {
         if (!validateCalcArea())
             throw new IllegalArgumentException();
-
-        String separator = basicSeparator + customSeparator;
 
         String[] numberList = calcArea.split("[" + separator + "]");
         return Arrays.stream(numberList).map(this::parseLong).toList();
