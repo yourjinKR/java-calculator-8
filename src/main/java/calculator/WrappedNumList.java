@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WrappedNumList {
@@ -10,6 +11,6 @@ public class WrappedNumList {
     }
 
     public List<Long> getNumList() {
-        return numList;
+        return new ArrayList<>(numList);
     }
 }
