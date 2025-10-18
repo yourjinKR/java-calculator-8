@@ -32,6 +32,17 @@
 
 <br>
 
+## WrappedNumList
+> `SeparatorHandler`가 제공하는 반환값에 대한 일급 컬렉션<br>
+### field 
+#### `List<Long> numberList`
+- `final`로 지정하여 재할당 방지
+### method
+#### `List<Long> getNumList()`
+- 필드값 리턴
+
+<br>
+
 ## Calculator
 > 타입에 따른 계산 및 결과값 반환
 ### method
